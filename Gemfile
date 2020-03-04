@@ -28,6 +28,8 @@ gem 'redis', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# secrets
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 # templating
 gem 'haml'
