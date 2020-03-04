@@ -15,5 +15,16 @@ module Kloot
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    config.generators do |g|
+      g.assets = false
+      g.helper = false
+      g.test_framework :test_unit, fixture: false
+      g.stylesheets = false
+      g.javascripts = false
+    end
+
+    config.view_specs = false
+
   end
 end
