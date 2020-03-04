@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_043553) do
+ActiveRecord::Schema.define(version: 2020_03_04_034628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(version: 2020_03_03_043553) do
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["year"], name: "index_projects_on_year", where: "(year IS NOT NULL)"
   end
 
+  create_table "screenshots", force: :cascade do |t|
+    t.string "title"
+    t.string "caption"
+    t.text "description"
+    t.bigint "project_id", null: false
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_screenshots_on_project_id"
+  end
+
+  add_foreign_key "screenshots", "projects"
 end
