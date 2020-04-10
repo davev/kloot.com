@@ -52,6 +52,9 @@ gem 'friendly_id'
 # for s3 activestorage
 gem "aws-sdk-s3", require: false
 
+# image variants
+gem 'image_processing'
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
