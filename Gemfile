@@ -49,6 +49,8 @@ gem 'kramdown'
 # permalinks | http://norman.github.io/friendly_id/file.Guide.html
 gem 'friendly_id'
 
+# for s3 activestorage
+gem "aws-sdk-s3", require: false
 
 
 group :development, :test do
